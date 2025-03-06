@@ -1,11 +1,12 @@
 const express = require('express')
 const cors = require("cors");
 const axios = require("axios");
+require("dotenv").config()
 
 const app = express()
 const todoRoutes = require('./routes/todoRoutes')
 
-// CORS setup to allow only frontend domain
+// CORS setup to allow frontend domain
 app.use(cors({ origin: "http://localhost:5173" }));
 
 app.use(express.json());
@@ -23,6 +24,6 @@ app.get("/products", async (req, res) => {
   }
 });
 
-const PORT = 5000;  
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+const port = process.env.PORT  
+app.listen(port, () => console.log(`Server running on http://localhost:${port}`));
 
