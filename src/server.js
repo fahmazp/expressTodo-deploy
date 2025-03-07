@@ -7,7 +7,7 @@ const app = express()
 const todoRoutes = require('./routes/todoRoutes')
 
 // CORS setup to allow frontend domain
-app.use(cors({ origin: "https://products-detailspage.vercel.app/" }));
+app.use(cors({ origin: "https://products-detailspage.vercel.app" }));
 
 app.use(express.json());
 
